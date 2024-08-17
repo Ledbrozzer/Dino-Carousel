@@ -1,0 +1,101 @@
+body{
+    font-family: "Poppins", sans-serif;
+    max-width: 1280px;
+    margin: 0 auto;/*deixar centralizado/-> elementos tendem a ir p/ esquerda*/
+}
+/*img{
+    width: 1920px;
+    height: 1080px;
+}*/
+.dinos-image{
+    position: fixed;
+    top: 40px;
+    left: 50px;
+    width: 100%;
+    z-index: -1;
+}
+h1{
+    color: #1d8346;
+}
+hr{
+    border-color: #1d8346;
+    height: 2px;
+}
+.infos{
+    display: none;
+}/*hide the element with the class info(all) and show the element with t-class info active..*/
+.infos.active{
+    display: block;
+}
+.content{
+    display: flex;/*content is the father of t-content inside him*/
+    flex-direction: column;/*p/ ficar 1 em baixo do outro*/
+    justify-content: space-evenly;/*espaçar uniformemente /-> deve ter espaço de sobra*/
+}
+.infos h1{/*espaço vai dizer q é seletor descendent*/
+    font-size: 35px;
+    color: #ffffff;
+    margin-bottom: 80px;
+    font-family: "GOT";
+    letter-spacing: 8px;
+}
+@font-face{
+    font-family: "GOT";
+    src: url(../fonts/)
+}
+.infos .description{
+    width: 40%;
+    font-size: 20px;
+    color: #ffffff;
+    font-weight: 200;
+    line-height: 40px;
+    height: 300px;/*p/ controlar tamanho da caixa do texto*/
+    overflow: auto;/*se texto for mt grande-> vai add um scroll*/
+    padding-right: 15px;/*p/texto desgrudar..*/
+}
+.move-buttons{
+    display: flex;
+    justify-content: space-between/*center*/;
+    margin-top: 200px;
+    /*gap: 20px;*/
+    bottom: 0;
+}
+.move-buttons .button{
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    border: 2px solid transparent;
+    cursor: pointer;
+    border-color: #ffffff;
+}
+.move-buttons .button.selected{
+    background-color: #1d8346;
+}
+.image{/*adjust t-img to be better fitted t/t-screen*/
+    width: 100vw;
+    height: 100vh;
+    object-fit: cover;
+    display: none;
+}
+.image.active{
+    display: block;
+    animation: alterImage 0.7s;
+}
+@keyframes alterImage{/*keyframes p/ definir serie de passos p/ 1 animação.. vai pegar o 'from' e mudar p/ 'to'(+- uma transição)*/
+    from{
+        opacity: 0.85;
+    }
+    to{
+        opacity: 1;
+    }
+}
+main::after{/*criar um pseudoelement->element q n exist no html, mas q eu ponho/crio e estilizo no css*/
+    content: "";
+    min-height: 100vh;
+    width: 100vw;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.05926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    z-index: -1;/*jogar p/ trás /-> p/ conseguir clickar nos botões*/
+}

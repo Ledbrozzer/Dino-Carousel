@@ -1,0 +1,30 @@
+@media (max-width: 1280px) {
+    body{
+        padding: 0 40px;
+        /*se tiver c/ problema no background(gradient)-> pode tirar*//*if t-gradient is giving u some trouble, it's ok to remove it!*/
+        background: linear-gradient(120deg, rgba(0, 0, 0, 1) 10%, rgba(0, 0, 0, 0.5926120448179273) 50%, rgba(0, 0, 0, 1) 90%);
+    }
+}
+@media (max-width: 768px) {
+    .infos.active{
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .infos .description{
+        width: 60%;
+        text-align: center;
+    }
+}
+@media (max-width: 425px) {
+    body{
+        padding: 40px;
+    }
+    .infos .description{
+        width: 100%;
+    }
+    .content{
+        min-height: 70vh;
+        gap: 50px;
+    }
+}
